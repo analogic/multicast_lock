@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:meta/meta.dart' show visibleForTesting;
 
 /// Allows an application to receive Wifi Multicast packets. Normally the Wifi
 /// stack filters out packets not explicitly addressed to this device. Acquring
@@ -20,7 +19,6 @@ class MulticastLock {
     return _instance;
   }
 
-  @visibleForTesting
   MulticastLock.private();
 
   /// Locks Wifi Multicast on until release() is called.

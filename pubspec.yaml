@@ -1,7 +1,7 @@
 name: multicast_lock
 description: A new flutter plugin project.
-version: 0.0.3
-author: Stanislav Humplik <sh@analogic.cz>
+version: 0.0.4
+author: Stanislav Humplík <sh@analogic.cz>
 homepage: https://github.com/analogic/multicast_lock
 
 environment:

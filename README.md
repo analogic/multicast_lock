@@ -4,6 +4,15 @@ Flutter plugin adding ability to access [MulticastLock](https://developer.androi
 
 ## Example code
 
+pubspec.yaml:
+```yaml
+...
+dependencies:
+  multicast_lock: any
+```
+
+
+example dart code:
 ```dart
 import 'package:multicast_lock/multicast_lock.dart';
 
@@ -12,8 +21,7 @@ void main() {
   final multicastLock = new MulticastLock();
   multicastLock.acquire();
   
-  // example code
-   
+  // example listener code
   final socket = await RawDatagramSocket.bind('224.0.0.1', 1900);
   socket.multicastHops = 10;
   socket.broadcastEnabled = true;
@@ -29,7 +37,7 @@ void main() {
   
   
   // ...
-  // you should release lock after listening with
+  // we should release lock after listening
   multicastLock.release();
 }
 

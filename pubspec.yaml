@@ -1,6 +1,6 @@
 name: multicast_lock
 description: A new flutter plugin project.
-version: 0.0.5
+version: 0.0.6
 author: Stanislav Humplík <sh@analogic.cz>
 homepage: https://github.com/analogic/multicast_lock
 
@@ -11,11 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-# For information on the generic Dart part of this file, see the
-# following page: https://www.dartlang.org/tools/pub/pubspec
-
-# The following section is specific to Flutter.
 flutter:
   plugin:
-    androidPackage: cz.analogic.multicastlock
+    androidPackage: cz.analogic.multicast_lock
     pluginClass: MulticastLockPlugin

@@ -1,4 +1,4 @@
-group 'cz.analogic.multicastlock'
+group 'cz.analogic.multicast_lock'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -20,15 +20,22 @@ rootProject.allprojects {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 29
 
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
     defaultConfig {
-        minSdkVersion 17
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        minSdkVersion 16
     }
     lintOptions {
         disable 'InvalidPackage'
     }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

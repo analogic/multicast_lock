@@ -1,16 +1,15 @@
 #import "MulticastLockPlugin.h"
+#if __has_include(<multicast_lock/multicast_lock-Swift.h>)
+#import <multicast_lock/multicast_lock-Swift.h>
+#else
+// Support project import fallback if the generated compatibility header
+// is not copied when this plugin is created as a library.
+// https://forums.swift.org/t/swift-static-libraries-dont-copy-generated-objective-c-header/19816
+#import "multicast_lock-Swift.h"
+#endif
 
 @implementation MulticastLockPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"multicast_lock"
-            binaryMessenger:[registrar messenger]];
-  MulticastLockPlugin* instance = [[MulticastLockPlugin alloc] init];
-  [registrar addMethodCallDelegate:instance channel:channel];
+  [SwiftMulticastLockPlugin registerWithRegistrar:registrar];
 }
-
-- (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
-    result(true);
-}
-
 @end
